@@ -1,0 +1,16 @@
+{
+    "env": [
+        {
+            "BEE_HOU": "$HOUDINI_PACKAGE_PATH/BeeHou"
+        },
+        {
+            "HOUDINI_OTLSCAN_PATH": {
+                "value": [
+                    "$BEE_HOU/hdas"
+                ],
+                "method": "append"
+            }
+        }
+    ],
+    "path": "$BEE_HOU"
+}
