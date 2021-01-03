@@ -1,0 +1,125 @@
+# Dialog script for bee:align::1.0.0 automatically generated
+
+{
+    name	bee:align::1.0.0
+    script	bee:align::1.0.0
+    label	"Align Bee"
+
+    help {
+	""
+    }
+
+    inputlabel	1	Input
+    inputlabel	2	Target
+    inputlabel	3	"Sub-Network Input #3"
+    inputlabel	4	"Sub-Network Input #4"
+
+    group {
+        name    "folder0"
+        label   "Target"
+
+        groupsimple {
+            name    "folder1"
+            label   "Pivot From"
+
+            parm {
+                name    "pivot_x"
+                label   "Input X"
+                type    integer
+                default { "1" }
+                menu {
+                    "0" "None"
+                    "1" "Min"
+                    "2" "Max"
+                }
+                range   { 0 10 }
+                parmtag { "autoscope" "0000000000000000" }
+                parmtag { "parmvop" "1" }
+                parmtag { "shaderparmcontexts" "cvex" }
+            }
+            parm {
+                name    "pivot_y"
+                label   "Input Y"
+                type    integer
+                default { "1" }
+                menu {
+                    "0" "None"
+                    "1" "Min"
+                    "2" "Max"
+                }
+                range   { 0 10 }
+                parmtag { "autoscope" "0000000000000000" }
+                parmtag { "parmvop" "1" }
+                parmtag { "shaderparmcontexts" "cvex" }
+            }
+            parm {
+                name    "pivot_z"
+                label   "Input Z"
+                type    integer
+                default { "1" }
+                menu {
+                    "0" "None"
+                    "1" "Min"
+                    "2" "Max"
+                }
+                range   { 0 10 }
+                parmtag { "autoscope" "0000000000000000" }
+                parmtag { "parmvop" "1" }
+                parmtag { "shaderparmcontexts" "cvex" }
+            }
+        }
+
+        groupsimple {
+            name    "folder3"
+            label   "Target"
+
+            parm {
+                name    "target_x"
+                label   "x"
+                type    integer
+                default { "1" }
+                menu {
+                    "0" "None"
+                    "1" "Min"
+                    "2" "Max"
+                }
+                range   { 0 10 }
+                parmtag { "autoscope" "0000000000000000" }
+                parmtag { "parmvop" "1" }
+                parmtag { "shaderparmcontexts" "cvex" }
+            }
+            parm {
+                name    "target_y"
+                label   "y"
+                type    integer
+                default { "1" }
+                menu {
+                    "0" "None"
+                    "1" "Min"
+                    "2" "Max"
+                }
+                range   { 0 10 }
+                parmtag { "autoscope" "0000000000000000" }
+                parmtag { "parmvop" "1" }
+                parmtag { "shaderparmcontexts" "cvex" }
+            }
+            parm {
+                name    "target_z"
+                label   "z"
+                type    integer
+                default { "1" }
+                menu {
+                    "0" "None"
+                    "1" "Min"
+                    "2" "Max"
+                }
+                range   { 0 10 }
+                parmtag { "autoscope" "0000000000000000" }
+                parmtag { "parmvop" "1" }
+                parmtag { "shaderparmcontexts" "cvex" }
+            }
+        }
+
+    }
+
+}

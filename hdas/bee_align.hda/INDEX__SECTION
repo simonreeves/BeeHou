@@ -1,0 +1,14 @@
+Operator:     bee:align::1.0.0
+Label:        Align Bee
+Path:         oplib:/Sop/bee:align::1.0.0?Sop/bee:align::1.0.0
+Icon:         SOP_subnet
+Table:        Sop
+License:      
+Extra:        
+User:         
+Inputs:       2 to 2
+Subnet:       true
+Python:       false
+Empty:        false
+Modified:     Sun Jan  3 16:58:01 2021
+
