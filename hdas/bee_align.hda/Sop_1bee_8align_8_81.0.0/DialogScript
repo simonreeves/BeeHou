@@ -16,110 +16,101 @@
 
     group {
         name    "folder0"
-        label   "Target"
+        label   "Settings"
 
-        groupsimple {
-            name    "folder1"
-            label   "Pivot From"
-
-            parm {
-                name    "pivot_x"
-                label   "Input X"
-                type    integer
-                default { "1" }
-                menu {
-                    "0" "None"
-                    "1" "Min"
-                    "2" "Max"
-                }
-                range   { 0 10 }
-                parmtag { "autoscope" "0000000000000000" }
-                parmtag { "parmvop" "1" }
-                parmtag { "shaderparmcontexts" "cvex" }
+        parm {
+            name    "pivot_x"
+            label   "X Input"
+            type    integer
+            joinnext
+            default { "1" }
+            menu {
+                "0" "None"
+                "1" "Min"
+                "2" "Max"
             }
-            parm {
-                name    "pivot_y"
-                label   "Input Y"
-                type    integer
-                default { "1" }
-                menu {
-                    "0" "None"
-                    "1" "Min"
-                    "2" "Max"
-                }
-                range   { 0 10 }
-                parmtag { "autoscope" "0000000000000000" }
-                parmtag { "parmvop" "1" }
-                parmtag { "shaderparmcontexts" "cvex" }
-            }
-            parm {
-                name    "pivot_z"
-                label   "Input Z"
-                type    integer
-                default { "1" }
-                menu {
-                    "0" "None"
-                    "1" "Min"
-                    "2" "Max"
-                }
-                range   { 0 10 }
-                parmtag { "autoscope" "0000000000000000" }
-                parmtag { "parmvop" "1" }
-                parmtag { "shaderparmcontexts" "cvex" }
-            }
+            range   { 0 10 }
+            parmtag { "autoscope" "0000000000000000" }
+            parmtag { "parmvop" "1" }
+            parmtag { "shaderparmcontexts" "cvex" }
         }
-
-        groupsimple {
-            name    "folder3"
-            label   "Target"
-
-            parm {
-                name    "target_x"
-                label   "x"
-                type    integer
-                default { "1" }
-                menu {
-                    "0" "None"
-                    "1" "Min"
-                    "2" "Max"
-                }
-                range   { 0 10 }
-                parmtag { "autoscope" "0000000000000000" }
-                parmtag { "parmvop" "1" }
-                parmtag { "shaderparmcontexts" "cvex" }
+        parm {
+            name    "target_x"
+            label   "  Target"
+            type    integer
+            default { "1" }
+            menu {
+                "0" "None"
+                "1" "Min"
+                "2" "Max"
             }
-            parm {
-                name    "target_y"
-                label   "y"
-                type    integer
-                default { "1" }
-                menu {
-                    "0" "None"
-                    "1" "Min"
-                    "2" "Max"
-                }
-                range   { 0 10 }
-                parmtag { "autoscope" "0000000000000000" }
-                parmtag { "parmvop" "1" }
-                parmtag { "shaderparmcontexts" "cvex" }
-            }
-            parm {
-                name    "target_z"
-                label   "z"
-                type    integer
-                default { "1" }
-                menu {
-                    "0" "None"
-                    "1" "Min"
-                    "2" "Max"
-                }
-                range   { 0 10 }
-                parmtag { "autoscope" "0000000000000000" }
-                parmtag { "parmvop" "1" }
-                parmtag { "shaderparmcontexts" "cvex" }
-            }
+            range   { 0 10 }
+            parmtag { "autoscope" "0000000000000000" }
+            parmtag { "parmvop" "1" }
+            parmtag { "shaderparmcontexts" "cvex" }
         }
-
+        parm {
+            name    "pivot_y"
+            label   "Y Input"
+            type    integer
+            joinnext
+            default { "1" }
+            menu {
+                "0" "None"
+                "1" "Min"
+                "2" "Max"
+            }
+            range   { 0 10 }
+            parmtag { "autoscope" "0000000000000000" }
+            parmtag { "parmvop" "1" }
+            parmtag { "shaderparmcontexts" "cvex" }
+        }
+        parm {
+            name    "target_y"
+            label   "  Target"
+            type    integer
+            default { "1" }
+            menu {
+                "0" "None"
+                "1" "Min"
+                "2" "Max"
+            }
+            range   { 0 10 }
+            parmtag { "autoscope" "0000000000000000" }
+            parmtag { "parmvop" "1" }
+            parmtag { "shaderparmcontexts" "cvex" }
+        }
+        parm {
+            name    "pivot_z"
+            label   "Z Input"
+            type    integer
+            joinnext
+            default { "1" }
+            menu {
+                "0" "None"
+                "1" "Min"
+                "2" "Max"
+            }
+            range   { 0 10 }
+            parmtag { "autoscope" "0000000000000000" }
+            parmtag { "parmvop" "1" }
+            parmtag { "shaderparmcontexts" "cvex" }
+        }
+        parm {
+            name    "target_z"
+            label   "  Target"
+            type    integer
+            default { "1" }
+            menu {
+                "0" "None"
+                "1" "Min"
+                "2" "Max"
+            }
+            range   { 0 10 }
+            parmtag { "autoscope" "0000000000000000" }
+            parmtag { "parmvop" "1" }
+            parmtag { "shaderparmcontexts" "cvex" }
+        }
     }
 
 }

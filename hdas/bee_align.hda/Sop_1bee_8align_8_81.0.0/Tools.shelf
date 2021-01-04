@@ -12,9 +12,12 @@
     <toolMenuContext name="network">
       <contextOpType>$HDA_TABLE_AND_NAME</contextOpType>
     </toolMenuContext>
-    <toolSubmenu>Digital Assets</toolSubmenu>
+    <toolSubmenu>Bee</toolSubmenu>
     <script scriptType="python"><![CDATA[import soptoolutils
 
 soptoolutils.genericTool(kwargs, '$HDA_NAME')]]></script>
+    <keywordList>
+      <keyword>align bee match position</keyword>
+    </keywordList>
   </tool>
 </shelfDocument>

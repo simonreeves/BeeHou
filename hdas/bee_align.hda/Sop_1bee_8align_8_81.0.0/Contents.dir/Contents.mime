@@ -32,21 +32,17 @@ Content-Type: text/plain
 
 sopflags sopflags = 
 comment ""
-position -14.9135 -15.8838
-connectornextid 2
+position -1.15831 -0.84488
+connectornextid 0
 flags =  lock off model off template off footprint off xray off bypass off display on render on highlight off unload off savedata off compress on colordefault on exposed on
 outputsNamed3
 {
 }
 inputsNamed3
 {
-0 	rail 0 1 "input1"
-1 	floor 0 1 "input2"
 }
 inputs
 {
-0 	rail 0 1
-1 	floor 0 1
 }
 stat
 {
@@ -751,16 +747,16 @@ force	[ 0	locks=0 ]	(	0	0	0	)
 Cd	[ 0	locks=0 ]	(	1	1	1	)
 N	[ 0	locks=0 ]	(	0	0	0	)
 folder0	[ 0	locks=0 ]	(	0	)
-pivotx	[ 0	locks=0 ]	(	[ pivotx	1 ] 	)
+pivotx	[ 0	locks=0 ]	(	[ pivotx	2 ] 	)
 pivoty	[ 0	locks=0 ]	(	[ pivoty	1 ] 	)
-pivotz	[ 0	locks=0 ]	(	[ pivotz	2 ] 	)
+pivotz	[ 0	locks=0 ]	(	[ pivotz	1 ] 	)
 folder1	[ 0	locks=0 ]	(	0	)
-min_x	[ 0	locks=0 ]	(	[ min_x	1 ] 	)
-max_x	[ 0	locks=0 ]	(	[ max_x	0 ] 	)
+min_x	[ 0	locks=0 ]	(	[ min_x	0 ] 	)
+max_x	[ 0	locks=0 ]	(	[ max_x	1 ] 	)
 min_y	[ 0	locks=0 ]	(	[ min_y	0 ] 	)
 max_y	[ 0	locks=0 ]	(	[ max_y	1 ] 	)
-min_z	[ 0	locks=0 ]	(	[ min_z	0 ] 	)
-max_z	[ 0	locks=0 ]	(	[ max_z	1 ] 	)
+min_z	[ 0	locks=0 ]	(	[ min_z	1 ] 	)
+max_z	[ 0	locks=0 ]	(	[ max_z	0 ] 	)
 }
 
 --HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
