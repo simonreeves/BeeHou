@@ -11,12 +11,19 @@
     <subMenu id="Bee">
       <label>Bee🐝</label>
 
-      <scriptItem id="h.BeeHello">
+      <scriptItem id="bee.BeeHello">
       <label>BUZZZ</label>
       <scriptCode><![CDATA[print('Buuzzzz')
       ]]></scriptCode>
       </scriptItem>
 
+      <scriptItem id="bee_check_for_renders">
+      <label>Check for Renders</label>
+      <scriptCode><![CDATA[
+import bee.check_for_renders
+bee.check_for_renders.main()
+      ]]></scriptCode>
+      </scriptItem>
     
     </subMenu>
   </menuBar>
