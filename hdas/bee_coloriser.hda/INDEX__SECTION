@@ -1,0 +1,14 @@
+Operator:     bee::coloriser::1.0.0
+Label:        Coloriser Bee
+Path:         oplib:/bee::Sop/coloriser::1.0.0?bee::Sop/coloriser::1.0.0
+Icon:         opdef:/bee::Sop/coloriser::1.0.0?IconSVG
+Table:        Sop
+License:      
+Extra:        
+User:         
+Inputs:       1 to 1
+Subnet:       true
+Python:       false
+Empty:        false
+Modified:     Wed Jan  6 16:03:19 2021
+
