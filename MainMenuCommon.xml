@@ -9,13 +9,7 @@
 <mainMenu>
   <menuBar>
     <subMenu id="Bee">
-      <label>Bee🐝</label>
-
-      <scriptItem id="bee.BeeHello">
-      <label>BUZZZ</label>
-      <scriptCode><![CDATA[print('Buuzzzz')
-      ]]></scriptCode>
-      </scriptItem>
+      <label>Bee</label>
 
       <scriptItem id="bee_check_for_renders">
       <label>Check for Renders</label>

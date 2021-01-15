@@ -139,3 +139,7 @@ cython_debug/
 hdas/backup/
 
 blank-env.sh
+
+*.code-workspace
+
+.vscode/
