@@ -32,17 +32,20 @@ Content-Type: text/plain
 
 sopflags sopflags = 
 comment ""
-position -1.36906 -0.348447
-connectornextid 0
-flags =  lock off model off template off footprint off xray off bypass off display on render on highlight off unload off savedata off compress on colordefault on exposed on
+position 7.49124 -9.75577
+connectornextid 2
+flags =  lock off model off template off footprint off xray off bypass off display on render off highlight off unload off savedata off compress on colordefault on exposed on
 outputsNamed3
 {
+1 "output1"
 }
 inputsNamed3
 {
+0 	create_points 0 1 "input1"
 }
 inputs
 {
+0 	create_points 0 1
 }
 stat
 {
@@ -72,7 +75,7 @@ Content-Disposition: attachment; filename="hdaroot.inp"
 Content-Type: text/plain
 
 1
-0 0 6 2 0 __NO_OWNER_NETWORK_BOX__ "FROMOUTPUT"
+0 -1.0324122999999998 6.8245610269293788 2 0 __NO_OWNER_NETWORK_BOX__ "FROMOUTPUT"
 
 --HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
 Content-Disposition: attachment; filename="hdaroot/color1.init"
@@ -87,7 +90,7 @@ Content-Type: text/plain
 
 sopflags sopflags = 
 comment ""
-position 0 4.034
+position -1.03241 3.43606
 connectornextid 2
 flags =  lock off model off template off footprint off xray off bypass off display off render off highlight off unload off savedata off compress on colordefault on exposed on
 outputsNamed3
@@ -210,6 +213,14 @@ Content-Type: text/plain
       start = 33.333333333333336
       segment { length = 0 value = 2 2 expr = ch(\"../ramp\") }
     }
+    channel class {
+      lefttype = extend
+      righttype = extend
+      default = 1
+      flags = 0
+      start = 40
+      segment { length = 0 value = 1 1 expr = "if(ch(\"../connectivity1/connecttype\")==0, 2,1)" }
+    }
   }
 
 --HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
@@ -221,7 +232,7 @@ version 0.8
 group	[ 0	locks=0 ]	(	""	)
 grouptype	[ 0	locks=0 ]	(	"guess"	)
 deleteallcolorattribs	[ 0	locks=0 ]	(	"off"	)
-class	[ 0	locks=0 ]	(	1	)
+class	[ 8	locks=0 ]	(	[ class	2 ] 	)
 colortype	[ 0	locks=0 ]	(	3	)
 color	[ 0	locks=0 ]	(	0.096090808510780334	0.38199999928474426	0.044312000274658203	)
 seed	[ 0	locks=0 ]	(	0	)
@@ -229,10 +240,10 @@ rampattribute	[ 0	locks=0 ]	(	rand_class	)
 ramprange	[ 0	locks=0 ]	(	0	1	)
 ramp	[ 0	locks=0 ]	(	[ ramp	2 ] 	)
 ramp1pos	[ 0	locks=0 ]	(	[ ramp1pos	0 ] 	)
-ramp1c	[ 0	locks=0 ]	(	[ ramp1cr	0 ] 	[ ramp1cg	0 ] 	[ ramp1cb	0 ] 	)
+ramp1c	[ 0	locks=0 ]	(	[ ramp1cr	0.22800000000000001 ] 	[ ramp1cg	0.106 ] 	[ ramp1cb	0.14499999999999999 ] 	)
 ramp1interp	[ 0	locks=0 ]	(	[ ramp1interp	1 ] 	)
 ramp2pos	[ 0	locks=0 ]	(	[ ramp2pos	1 ] 	)
-ramp2c	[ 0	locks=0 ]	(	[ ramp2cr	1 ] 	[ ramp2cg	1 ] 	[ ramp2cb	1 ] 	)
+ramp2c	[ 0	locks=0 ]	(	[ ramp2cr	0.34652161598205566 ] 	[ ramp2cg	0.25190401077270508 ] 	[ ramp2cb	0.76800000667572021 ] 	)
 ramp2interp	[ 0	locks=0 ]	(	[ ramp2interp	1 ] 	)
 }
 
@@ -268,7 +279,7 @@ Content-Type: text/plain
 
 sopflags sopflags = 
 comment ""
-position -0.003 5.0719
+position -1.03241 4.56556
 connectornextid 2
 flags =  lock off model off template off footprint off xray off bypass off display off render off highlight off unload off savedata off compress on colordefault on exposed on
 outputsNamed3
@@ -481,6 +492,14 @@ Content-Type: text/plain
       start = 33.333333333333336
       segment { length = 0 value = 0.499 0.499 expr = ch(\"../seed\") }
     }
+    channel class {
+      lefttype = extend
+      righttype = extend
+      default = 1
+      flags = 0
+      start = 40
+      segment { length = 0 value = 1 1 expr = "if(ch(\"../connectivity1/connecttype\")==0, 2,1)" }
+    }
   }
 
 --HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
@@ -492,7 +511,7 @@ version 0.8
 folder0	[ 0	locks=0 ]	(	0	0	)
 group	[ 0	locks=0 ]	(	""	)
 grouptype	[ 0	locks=0 ]	(	"guess"	)
-class	[ 0	locks=0 ]	(	"primitive"	)
+class	[ 8	locks=0 ]	(	[ class	2 ] 	)
 vex_numcount	[ 0	locks=0 ]	(	10	)
 vex_threadjobsize	[ 0	locks=0 ]	(	1024	)
 snippet	[ 0	locks=0 ]	(	"f@rand_class = rand(@class+ch('seed'));"	)
@@ -510,7 +529,7 @@ vex_inplace	[ 0	locks=0 ]	(	"off"	)
 vex_selectiongroup	[ 0	locks=0 ]	(	""	)
 vex_precision	[ 0	locks=0 ]	(	auto	)
 folder1	[ 0	locks=0 ]	(	0	0	)
-seed	[ 0	locks=0 ]	(	[ seed	1 ] 	)
+seed	[ 0	locks=0 ]	(	[ seed	0.21099999999999999 ] 	)
 }
 
 --HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
@@ -537,7 +556,7 @@ Content-Type: text/plain
 
 sopflags sopflags = 
 comment ""
-position 0 6.1118
+position -1.03241 5.69506
 connectornextid 2
 flags =  lock off model off template off footprint off xray off bypass off display off render off highlight off unload off savedata off compress on colordefault on exposed on
 outputsNamed3
@@ -565,12 +584,27 @@ exprlanguage hscript
 end
 
 --HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
+Content-Disposition: attachment; filename="hdaroot/connectivity1.chn"
+Content-Type: text/plain
+
+{
+    channel connecttype {
+      lefttype = extend
+      righttype = extend
+      default = 1
+      flags = 0
+      start = 40
+      segment { length = 0 value = 1 1 expr = ch(\"../connecttype\") }
+    }
+  }
+
+--HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
 Content-Disposition: attachment; filename="hdaroot/connectivity1.parm"
 Content-Type: text/plain
 
 {
 version 0.8
-connecttype	[ 0	locks=0 ]	(	"prim"	)
+connecttype	[ 0	locks=0 ]	(	[ connecttype	0 ] 	)
 attribname	[ 0	locks=0 ]	(	class	)
 attribtype	[ 0	locks=0 ]	(	"int"	)
 prefix	[ 0	locks=0 ]	(	piece	)
@@ -605,7 +639,7 @@ Content-Type: text/plain
 
 sopflags sopflags = 
 comment ""
-position -0.0035 3.034
+position -1.03241 2.30656
 connectornextid 2
 flags =  lock off model off template off footprint off xray off bypass off display off render off highlight off unload off savedata off compress on colordefault on exposed on
 outputsNamed3
@@ -633,13 +667,28 @@ exprlanguage hscript
 end
 
 --HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
+Content-Disposition: attachment; filename="hdaroot/attribpromote1.chn"
+Content-Type: text/plain
+
+{
+    channel inclass {
+      lefttype = extend
+      righttype = extend
+      default = 1
+      flags = 0
+      start = 40
+      segment { length = 0 value = 1 1 expr = "if(ch(\"../connectivity1/connecttype\")==0, 2,1)" }
+    }
+  }
+
+--HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
 Content-Disposition: attachment; filename="hdaroot/attribpromote1.parm"
 Content-Type: text/plain
 
 {
 version 0.8
 inname	[ 0	locks=0 ]	(	Cd	)
-inclass	[ 0	locks=0 ]	(	"primitive"	)
+inclass	[ 8	locks=0 ]	(	[ inclass	2 ] 	)
 outclass	[ 0	locks=0 ]	(	"point"	)
 usepieceattrib	[ 0	locks=0 ]	(	"off"	)
 pieceattrib	[ 0	locks=0 ]	(	name	)
@@ -673,7 +722,7 @@ Content-Type: text/plain
 
 sopflags sopflags = 
 comment ""
-position 0.0971877 -0.253639
+position 0.00627861 -1.09779
 connectornextid 1
 flags =  lock off model off template off footprint off xray off bypass off display on render on highlight off unload off savedata off compress on colordefault on exposed on
 outputsNamed3
@@ -732,7 +781,7 @@ Content-Type: text/plain
 
 sopflags sopflags = 
 comment ""
-position 1.90238 2.034
+position 1.22679 1.85476
 connectornextid 2
 flags =  lock off model off template off footprint off xray off bypass off display off render off highlight off unload off savedata off compress on colordefault on exposed on
 outputsNamed3
@@ -768,13 +817,13 @@ version 0.8
 usereference	[ 0	locks=0 ]	(	"off"	)
 negate	[ 0	locks=0 ]	(	"off"	)
 doptdel	[ 0	locks=0 ]	(	"on"	)
-ptdel	[ 0	locks=0 ]	(	""	)
+ptdel	[ 0	locks=0 ]	(	"rand_class class"	)
 dovtxdel	[ 0	locks=0 ]	(	"on"	)
-vtxdel	[ 0	locks=0 ]	(	""	)
+vtxdel	[ 0	locks=0 ]	(	"rand_class class"	)
 doprimdel	[ 0	locks=0 ]	(	"on"	)
 primdel	[ 0	locks=0 ]	(	"rand_class class"	)
 dodtldel	[ 0	locks=0 ]	(	"on"	)
-dtldel	[ 0	locks=0 ]	(	""	)
+dtldel	[ 0	locks=0 ]	(	"rand_class class"	)
 updatevar	[ 0	locks=0 ]	(	"on"	)
 }
 
@@ -802,7 +851,7 @@ Content-Type: text/plain
 
 sopflags sopflags = 
 comment ""
-position 0.0971877 0.805961
+position 0.00627861 0.0317052
 connectornextid 3
 flags =  lock off model off template off footprint off xray off bypass off display off render off highlight off unload off savedata off compress on colordefault on exposed on
 outputsNamed3
