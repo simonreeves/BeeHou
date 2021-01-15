@@ -1,0 +1,165 @@
+# Dialog script for bee::railings::1.0.0 automatically generated
+
+{
+    name	bee::railings::1.0.0
+    script	bee::railings::1.0.0
+    label	"Railings Bee"
+
+    help {
+	""
+    }
+
+    inputlabel	1	"Sub-Network Input #1"
+    inputlabel	2	"Sub-Network Input #2"
+    inputlabel	3	"Sub-Network Input #3"
+    inputlabel	4	"Sub-Network Input #4"
+
+    groupsimple {
+        name    "folder1"
+        label   "Extend"
+
+        parm {
+            name    "direction"
+            label   "Direction"
+            type    integer
+            default { "1" }
+            menu {
+                "0" "Extend to ground"
+                "1" "Up"
+            }
+            range   { 0! 10 }
+            parmtag { "autoscope" "0000000000000000" }
+            parmtag { "script_callback_language" "python" }
+        }
+        parm {
+            name    "height"
+            label   "Height"
+            type    float
+            default { "1" }
+            disablewhen "{ direction == 0 }"
+            range   { 0 1 }
+            parmtag { "autoscope" "0000000000000000" }
+            parmtag { "script_callback_language" "python" }
+        }
+        parm {
+            name    "ncy"
+            label   "Total Number"
+            type    integer
+            default { "1" }
+            range   { 0! 20 }
+            parmtag { "autoscope" "0000000000000000" }
+            parmtag { "script_callback_language" "python" }
+        }
+    }
+
+    groupsimple {
+        name    "folder0"
+        label   "Shape"
+
+        parm {
+            name    "surfaceshape"
+            label   "Surface Shape"
+            type    ordinal
+            default { "tube" }
+            menu {
+                "input"     "Second Input Cross Sections"
+                "tube"      "Round Tube"
+                "square"    "Square Tube"
+                "ribbon"    "Ribbon"
+            }
+            parmtag { "autoscope" "0000000000000000" }
+            parmtag { "script_callback_language" "python" }
+        }
+        parm {
+            name    "cols"
+            label   "Columns"
+            type    integer
+            default { "6" }
+            range   { 1! 24 }
+            parmtag { "autoscope" "0000000000000000" }
+            parmtag { "script_callback_language" "python" }
+        }
+        parm {
+            name    "radius"
+            label   "Radius"
+            type    float
+            default { "0.05" }
+            range   { 0 1 }
+            parmtag { "autoscope" "0000000000000000" }
+            parmtag { "units" "m1" }
+        }
+        parm {
+            name    "remove_vert_ends"
+            label   "Remove Vertical Ends"
+            type    toggle
+            default { "0" }
+            range   { 0! 10 }
+            parmtag { "autoscope" "0000000000000000" }
+            parmtag { "script_callback_language" "python" }
+        }
+        parm {
+            name    "upvectortype"
+            label   "Target Up Vector"
+            type    ordinal
+            default { "y" }
+            menu {
+                "normal"    "Curve Normal"
+                "x"         "X Axis"
+                "y"         "Y Axis"
+                "z"         "Z Axis"
+                "attrib"    "Attribute"
+                "custom"    "Custom"
+            }
+            parmtag { "autoscope" "0000000000000000" }
+            parmtag { "script_callback_language" "python" }
+        }
+        parm {
+            name    "computeuvs"
+            label   "Compute UVs"
+            type    toggle
+            default { "on" }
+            parmtag { "autoscope" "0000000000000000" }
+            parmtag { "script_callback_language" "python" }
+        }
+    }
+
+    groupsimple {
+        name    "folder2"
+        label   "Spacing"
+
+        parm {
+            name    "spacing_type"
+            label   "spacing_type"
+            type    integer
+            default { "0" }
+            menu {
+                "0" "by Count"
+                "1" "Set Distance"
+            }
+            range   { 0! 1 }
+            parmtag { "autoscope" "0000000000000000" }
+            parmtag { "script_callback_language" "python" }
+        }
+        parm {
+            name    "vert_gaps"
+            label   "vert_gaps"
+            type    float
+            default { "0.5" }
+            disablewhen "{ spacing_type == 0 }"
+            range   { 0! 5 }
+            parmtag { "autoscope" "0000000000000000" }
+            parmtag { "units" "m1" }
+        }
+        parm {
+            name    "vert_count"
+            label   "Vert Count"
+            type    integer
+            default { "10" }
+            disablewhen "{ spacing_type == 1 }"
+            range   { 1! 50 }
+            parmtag { "autoscope" "0000000000000000" }
+            parmtag { "script_callback_language" "python" }
+        }
+    }
+
+}

@@ -1,0 +1,24 @@
+{
+	"values":["18.5.446"
+	],
+	"indexes":{
+		"hdaroot/offset.userdata":0,
+		"hdaroot/copy_height.userdata":0,
+		"hdaroot/resample_length.userdata":0,
+		"hdaroot/switch_direciton1.userdata":0,
+		"hdaroot/output0.userdata":0,
+		"hdaroot/merge14.userdata":0,
+		"hdaroot/keep_points1.userdata":0,
+		"hdaroot/sweep1.userdata":0,
+		"hdaroot/merge2.userdata":0,
+		"hdaroot/merge15.userdata":0,
+		"hdaroot/resample_count.userdata":0,
+		"hdaroot/add_line.userdata":0,
+		"hdaroot/extend_up.userdata":0,
+		"hdaroot/add_line1.userdata":0,
+		"hdaroot/switch_direciton.userdata":0,
+		"hdaroot/switch_spacing.userdata":0,
+		"hdaroot/switch_remove_vert_ends.userdata":0,
+		"hdaroot/extend_to_ground.userdata":0
+	}
+}

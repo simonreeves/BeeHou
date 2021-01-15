@@ -1,0 +1,14 @@
+Operator:     bee::railings::1.0.0
+Label:        Railings Bee
+Path:         oplib:/bee::Sop/railings::1.0.0?bee::Sop/railings::1.0.0
+Icon:         SOP_subnet
+Table:        Sop
+License:      
+Extra:        
+User:         
+Inputs:       1 to 1
+Subnet:       true
+Python:       false
+Empty:        false
+Modified:     Wed Jan  6 16:07:09 2021
+
