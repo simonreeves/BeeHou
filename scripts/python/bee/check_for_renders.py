@@ -1,4 +1,3 @@
-import os
 import glob
 import hou
 
@@ -42,4 +41,8 @@ def main():
         if hou.isUIAvailable():
             message = 'Renders already exist for \"{}\" you should version up'.format(', '.join(existing_renders))
             hou.ui.setStatusMessage(message=message, severity=hou.severityType.ImportantMessage)
+    else:
+        if hou.isUIAvailable():
+            message = 'No renders found'
+            hou.ui.setStatusMessage(message=message, severity=hou.severityType.Message)
 
