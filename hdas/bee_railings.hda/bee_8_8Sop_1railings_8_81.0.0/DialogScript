@@ -26,6 +26,7 @@
             menu {
                 "0" "Extend to ground"
                 "1" "Up"
+                "2" "Along Normals"
             }
             range   { 0! 10 }
             parmtag { "autoscope" "0000000000000000" }
