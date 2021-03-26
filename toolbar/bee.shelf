@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<shelfDocument>
+  <!-- This file contains definitions of shelves, toolbars, and tools.
+ It should not be hand-edited when it is being used by the application.
+ Note, that two definitions of the same element are not allowed in
+ a single file. -->
+
+  <toolshelf name="Bee" label="Bee">
+    <memberTool name="bee_placehighlight"/>
+  </toolshelf>
+
+  <tool name="bee_placehighlight" label="Place Highlight" icon="PLASMA_App">
+    <script scriptType="python"><![CDATA[import stateutils
+
+# get viewport
+viewer = stateutils.findSceneViewer()
+network = viewer.pwd()
+
+# get selected object or start pick
+objects = viewer.selectObjects(
+    prompt='Select Light',
+    quick_select=False,
+    use_existing_selection=True,
+    allow_multisel=False,
+    allowed_types=['*light*'] # wildcard covers rslight etc.
+)
+
+# The user pressed Enter without selecting an object
+if not objects:
+    raise hou.Error("You must select an object to use this tool")
+
+# only continue if viewer/network view is object level
+if network.childTypeCategory() == hou.objNodeTypeCategory():
+    viewer.setCurrentState("place_highlight")
+else:
+    hou.ui.setStatusMessage("You must be at object level to use this tool", hou.severityType.Error)
+]]></script>
+    <keywordList>
+      <keyword>place highlight bee light</keyword>
+    </keywordList>
+  </tool>
+</shelfDocument>
