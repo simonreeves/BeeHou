@@ -10,7 +10,8 @@ import hou
 import viewerstate.utils as su
 import stateutils
 
-class State(object):
+
+class BeePlaceHighlightState(object):
     def __init__(self, state_name, scene_viewer):
         self.state_name = state_name
         self.scene_viewer = scene_viewer
@@ -20,27 +21,28 @@ class State(object):
         self._geometry = None
         
         # create geo for guide
-        # Run a geneartor Box SOP Verb
-        verb = hou.sopNodeTypeCategory().nodeVerb('line')
-        verb.setParms({
-            'dist': 0.5,
+        guide_line_verb = hou.sopNodeTypeCategory().nodeVerb('line')
+        guide_line_verb.setParms({
+            'dist': self.light_dist,
             'dir': (0,0,1)
             })
 
         # Get a fresh geometry to write to
-        geo = hou.Geometry()
-        # execute the verb
-        verb.execute(geo, [])
+        guide_line_geo = hou.Geometry()
+        
+        # execute the guide_line_verb
+        guide_line_verb.execute(guide_line_geo, [])
 
         # create the guide
         self._guide = hou.SimpleDrawable(
             scene_viewer,
-            geo,
+            guide_line_geo,
             state_name + "_guide"
         )
 
         self._guide.enable(True)
         self._guide.show(False)
+
 
     def onGenerate(self, kwargs):
         self.scene_viewer.beginStateUndo('Place highlight')
@@ -62,7 +64,7 @@ class State(object):
         Process mouse events
         """
 
-        self.scene_viewer.setPromptMessage('Left-click to place highlight!')
+        self.scene_viewer.setPromptMessage('Left-click to place highlight')
 
         ui_event = kwargs["ui_event"]
         dev = ui_event.device()
@@ -106,12 +108,12 @@ class State(object):
         # ray_dir_obj = ray_dir  * parent_xform.inverted().extractRotates() 
         ray_dir_obj = ray_dir.multiplyAsDir(parent_xform.inverted())
         
-        # get geo interesection - return is in local space
+        # get geo intersection - return is in local space
         hit, hit_pos, norm, uvw = su.sopGeometryIntersection(
             self._geometry, ray_origin_obj, ray_dir_obj
         )
         
-        # as that was local space multipy the world transform to it
+        # as that was local space multiply with world transform
         world_pos = hit_pos * parent_xform
         world_norm = norm.multiplyAsDir(parent_xform)
   
@@ -149,7 +151,7 @@ def createViewerStateTemplate():
     state_cat = hou.objNodeTypeCategory()
 
     template = hou.ViewerStateTemplate(state_typename, state_label, state_cat)
-    template.bindFactory(State)
+    template.bindFactory(BeePlaceHighlightState)
     template.bindIcon("MISC_python")
 
     return template
