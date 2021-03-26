@@ -9,8 +9,9 @@
     <memberTool name="bee_placehighlight"/>
   </toolshelf>
 
-  <tool name="bee_placehighlight" label="Place Highlight" icon="PLASMA_App">
-    <script scriptType="python"><![CDATA[import stateutils
+  <tool name="bee_placehighlight" label="Place Highlight" icon="$BEE_HOU/icons/placehighlight.svg">
+    <script scriptType="python"><![CDATA[import hou
+import stateutils
 
 # get viewport
 viewer = stateutils.findSceneViewer()
