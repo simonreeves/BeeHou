@@ -9,6 +9,7 @@
 <mainMenu>
   <menuBar>
     <subMenu id="Bee">
+    <modifyItem><insertBefore>help_menu</insertBefore></modifyItem>
       <label>Bee</label>
 
       <scriptItem id="bee_check_for_renders">
