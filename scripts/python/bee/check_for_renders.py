@@ -29,8 +29,14 @@ def main():
         # eval at frame to get predictable result
         output_filepath = node.parm(output_parm).evalAtFrame(1001)
 
+        # replace frame with wildcard
+        glob_path = output_filepath.replace('1001', '*')
+
+        # for redshift need to check for %AOV% too
+        glob_path = glob_path.replace('_%AOV%', '*')
+
         # use glob to search the folder with wildcard
-        existing_files = glob.glob(output_filepath.replace('1001', '*'))
+        existing_files = glob.glob(glob_path)
 
         # add node path to the list ready to print later
         if existing_files:
