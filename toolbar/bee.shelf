@@ -7,6 +7,7 @@
 
   <toolshelf name="Bee" label="Bee">
     <memberTool name="bee_placehighlight"/>
+    <memberTool name="tool_1"/>
   </toolshelf>
 
   <tool name="bee_placehighlight" label="Place Highlight" icon="$BEE_HOU/icons/placehighlight.svg">
@@ -39,5 +40,13 @@ else:
     <keywordList>
       <keyword>place highlight bee light</keyword>
     </keywordList>
+  </tool>
+
+  <tool name="tool_1" label="Make Merged Object Bee" icon="PLASMA_App">
+    <toolMenuContext name="network">
+      <contextNetType>OBJ</contextNetType>
+    </toolMenuContext>
+    <script scriptType="python"><![CDATA[import bee.make_merged_object
+bee.make_merged_object.main()]]></script>
   </tool>
 </shelfDocument>
