@@ -8,9 +8,11 @@
   <toolshelf name="Bee" label="Bee">
     <memberTool name="bee_placehighlight"/>
     <memberTool name="tool_1"/>
+    <memberTool name="bee_labelled_netbox"/>
   </toolshelf>
 
   <tool name="bee_placehighlight" label="Place Highlight" icon="$BEE_HOU/icons/placehighlight.svg">
+    <toolSubmenu>Bee</toolSubmenu>
     <script scriptType="python"><![CDATA[import hou
 import stateutils
 
@@ -46,7 +48,31 @@ else:
     <toolMenuContext name="network">
       <contextNetType>OBJ</contextNetType>
     </toolMenuContext>
+    <toolSubmenu>Bee</toolSubmenu>
     <script scriptType="python"><![CDATA[import bee.make_merged_object
 bee.make_merged_object.main()]]></script>
+  </tool>
+
+  <tool name="bee_labelled_netbox" label="Labelled Network Box Bee" icon="PLASMA_App">
+    <toolMenuContext name="network">
+      <contextNetType>OBJ</contextNetType>
+      <contextNetType>SOP</contextNetType>
+      <contextNetType>CHOP</contextNetType>
+      <contextNetType>ROP</contextNetType>
+      <contextNetType>SHOP</contextNetType>
+      <contextNetType>COP2</contextNetType>
+      <contextNetType>VOP</contextNetType>
+      <contextNetType>VOPNET</contextNetType>
+      <contextNetType>DOP</contextNetType>
+      <contextNetType>TOP</contextNetType>
+      <contextNetType>LOP</contextNetType>
+    </toolMenuContext>
+    <toolSubmenu>Bee</toolSubmenu>
+    <script scriptType="python"><![CDATA[import bee.labelled_netbox
+reload(bee.labelled_netbox)
+bee.labelled_netbox.main()]]></script>
+    <keywordList>
+      <keyword>bee network box label note sticky</keyword>
+    </keywordList>
   </tool>
 </shelfDocument>
