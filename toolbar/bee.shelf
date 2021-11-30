@@ -10,6 +10,7 @@
     <memberTool name="bee_labelled_netbox"/>
     <memberTool name="bee_object_merge_selection_obj"/>
     <memberTool name="tool_1"/>
+    <memberTool name="List Materials"/>
   </toolshelf>
 
   <tool name="bee_placehighlight" label="Place Highlight" icon="$BEE_HOU/icons/placehighlight.svg">
@@ -88,6 +89,26 @@ bee.labelled_netbox.main()]]></script>
 bee.object_merge_selected.sibling_obj(kwargs)]]></script>
     <keywordList>
       <keyword>bee object merge</keyword>
+    </keywordList>
+  </tool>
+
+  <tool name="List Materials" label="List Materials" icon="Textport">
+    <toolMenuContext name="network">
+      <contextNetType>SOP</contextNetType>
+    </toolMenuContext>
+    <script scriptType="python"><![CDATA[import hou
+
+for n in hou.selectedNodes():
+   
+    g = n.geometry()
+    a = g.findPrimAttrib('shop_materialpath')
+    
+    materials = a.strings()
+     
+    for m in materials:
+        print(m)]]></script>
+    <keywordList>
+      <keyword>python list materials</keyword>
     </keywordList>
   </tool>
 </shelfDocument>
