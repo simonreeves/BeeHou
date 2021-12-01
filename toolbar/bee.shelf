@@ -11,6 +11,7 @@
     <memberTool name="bee_object_merge_selection_obj"/>
     <memberTool name="tool_1"/>
     <memberTool name="List Materials"/>
+    <memberTool name="bee_focus_null"/>
   </toolshelf>
 
   <tool name="bee_placehighlight" label="Place Highlight" icon="$BEE_HOU/icons/placehighlight.svg">
@@ -96,19 +97,21 @@ bee.object_merge_selected.sibling_obj(kwargs)]]></script>
     <toolMenuContext name="network">
       <contextNetType>SOP</contextNetType>
     </toolMenuContext>
-    <script scriptType="python"><![CDATA[import hou
-
-for n in hou.selectedNodes():
-   
-    g = n.geometry()
-    a = g.findPrimAttrib('shop_materialpath')
-    
-    materials = a.strings()
-     
-    for m in materials:
-        print(m)]]></script>
+    <script scriptType="python"><![CDATA[import bee.list_materials
+bee.list_materials.main()]]></script>
     <keywordList>
       <keyword>python list materials</keyword>
+    </keywordList>
+  </tool>
+
+  <tool name="bee_focus_null" label="Focus Null" icon="Textport">
+    <toolMenuContext name="network">
+      <contextNetType>OBJ</contextNetType>
+    </toolMenuContext>
+    <script scriptType="python"><![CDATA[import bee.focus_null
+bee.focus_null.main()]]></script>
+    <keywordList>
+      <keyword>camera add focus null bee</keyword>
     </keywordList>
   </tool>
 </shelfDocument>
