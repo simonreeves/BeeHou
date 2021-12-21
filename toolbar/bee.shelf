@@ -12,6 +12,7 @@
     <memberTool name="tool_1"/>
     <memberTool name="List Materials"/>
     <memberTool name="bee_focus_null"/>
+    <memberTool name="bee_link_light_to_display"/>
   </toolshelf>
 
   <tool name="bee_placehighlight" label="Place Highlight" icon="$BEE_HOU/icons/placehighlight.svg">
