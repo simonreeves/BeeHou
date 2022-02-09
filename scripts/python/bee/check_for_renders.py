@@ -29,20 +29,25 @@ def main():
         # eval at frame to get predictable result
         output_filepath = node.parm(output_parm).evalAtFrame(1001)
 
+        # replace frame with wildcard
+        glob_path = output_filepath.replace('1001', '*')
+
+        # for redshift need to check for %AOV% too
+        glob_path = glob_path.replace('_%AOV%', '*')
+
         # use glob to search the folder with wildcard
-        existing_files = glob.glob(output_filepath.replace('1001', '*'))
+        existing_files = glob.glob(glob_path)
 
         # add node path to the list ready to print later
         if existing_files:
             existing_renders.append(node.path())
 
     # if any were found
-    if existing_renders:
-        if hou.isUIAvailable():
-            message = 'Renders already exist for \"{}\" you should version up'.format(', '.join(existing_renders))
+    if hou.isUIAvailable():
+        if existing_renders:
+            message = 'Renders already exist for \"{}\" consider versioning up'.format(', '.join(existing_renders))
             hou.ui.setStatusMessage(message=message, severity=hou.severityType.ImportantMessage)
-    else:
-        if hou.isUIAvailable():
+        else:
             message = 'No renders found'
             hou.ui.setStatusMessage(message=message, severity=hou.severityType.Message)
 
