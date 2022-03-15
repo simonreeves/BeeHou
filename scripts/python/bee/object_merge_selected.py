@@ -13,33 +13,36 @@ def sibling_sop(kwargs):
     # get pane (where tab menu called from)
     pane = stateutils.activePane(kwargs)
 
-    if isinstance(pane, hou.NetworkEditor):
-        # save selected node
-        selected_nodes = hou.selectedNodes()
-
-        for orig_node in selected_nodes:
-            
-            input_index = selected_nodes.index(orig_node)
-
-            if input_index == 0:
-                # use drop tool for first source
-                objmerge = soptoolutils.genericTool(kwargs, 'object_merge')
-                first_network_pos = objmerge.position()
-            else:
-                objmerge = orig_node.parent().createNode('object_merge', orig_node.name())
-                
-                # set position based on first placed node and index of loop
-                additional_pos = hou.Vector2((input_index*2, 0.0))
-                objmerge.setPosition(first_network_pos + additional_pos)
-            
-            objmerge.setName(orig_node.name().replace('OUT', 'IN'))
-            # get relative path
-            rel_path = objmerge.relativePathTo(orig_node)
-            objmerge.parm('objpath1').set(rel_path)
-            objmerge.parm('xformtype').set(1)
-
-    else:
+    if not isinstance(pane, hou.NetworkEditor):
         hou.ui.setStatusMessage('Only works in network editor', severity=hou.severityType.Error)
+        return False
+    
+    # store reference to selected node
+    selected_nodes = hou.selectedNodes()
+
+    for orig_node in selected_nodes:
+        
+        # check which loop index we are on
+        input_index = selected_nodes.index(orig_node)
+
+        objmerge_name = 'IN_{}'.format(orig_node.name())
+
+        if input_index == 0:
+            # use drop tool for first source
+            objmerge = soptoolutils.genericTool(kwargs, 'object_merge')
+            first_network_pos = objmerge.position()
+            objmerge.setName(objmerge_name, unique_name=True)
+        else:
+            objmerge = orig_node.parent().createNode('object_merge', objmerge_name)
+            
+            # set position based on first placed node and index of loop
+            additional_pos = hou.Vector2((input_index*2, 0.0))
+            objmerge.setPosition(first_network_pos + additional_pos)
+        
+        # get relative path
+        rel_path = objmerge.relativePathTo(orig_node)
+        objmerge.parm('objpath1').set(rel_path)
+        objmerge.parm('xformtype').set(1)
 
 
 def sibling_obj(kwargs):
