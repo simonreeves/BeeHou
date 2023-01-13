@@ -105,7 +105,7 @@ bee.list_materials.main()]]></script>
     </keywordList>
   </tool>
 
-  <tool name="bee_focus_null" label="Focus Null (Bee)" icon="$BEE_HOU/icons/align.svg">
+  <tool name="bee_focus_null" label="Camera Focus Null (Bee)" icon="$BEE_HOU/icons/align.svg">
     <toolMenuContext name="network">
       <contextNetType>OBJ</contextNetType>
     </toolMenuContext>
