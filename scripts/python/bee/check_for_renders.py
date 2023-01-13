@@ -11,6 +11,8 @@ def main():
         'Redshift': 'RS_outputFileNamePrefix',
         'OpenGL': 'picture',
         'Mantra': 'vm_picture',
+        'OpenGL': 'picture',
+        'An_PreVis': 'picture'
     }
 
     # init list
