@@ -1,22 +1,44 @@
 import hou
+import stateutils
+import toolutils
 
-def main():
-    nodes = hou.selectedNodes()
+def main(kwargs):
+    """
+    Creates a null to use as a focus gizmo for the selected camera(s)
+    """
+
+    # store reference to selected node
+    selected_nodes = hou.selectedNodes()
+
     # Init to record if a camera was selected at all
     any_camera_selected = False
 
-    for node in nodes:
+    # get network editor pane
+    pane = stateutils.activePane(kwargs)
+
+    if not isinstance(pane, hou.NetworkEditor):
+        hou.ui.setStatusMessage('Only works in network editor', severity=hou.severityType.Error)
+        return False
+    
+    for node in selected_nodes:
         if node.type().name() != 'cam':
             continue
         
         # A camera was found!
         any_camera_selected = True
 
-        # create null
-        focus_null = node.parent().createNode('null', node.name() + '_focus')
+        # create null      
+        # toolutils not soptoolutils, because it's not a SOP
+        focus_null = toolutils.genericTool(kwargs, 'null')
+        focus_null.setName(node.name() + '_focus', True)
+        
+        # add focus distance expression
         expression = "vlength(vtorigin('.', '{}'))".format(node.relativePathTo(focus_null))
         node.parm('focus').setExpression(expression)
         
+        # Lock rotation
+        focus_null.parmTuple('r').lock(True)
+
         # set focus null visual properties
         focus_null.parm('shadedmode').set(1)
         focus_null.parm('controltype').set(2)

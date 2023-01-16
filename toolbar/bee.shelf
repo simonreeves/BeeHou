@@ -111,7 +111,7 @@ bee.list_materials.main()]]></script>
     </toolMenuContext>
     <toolSubmenu>Bee</toolSubmenu>
     <script scriptType="python"><![CDATA[import bee.focus_null
-bee.focus_null.main()]]></script>
+bee.focus_null.main(kwargs)]]></script>
     <keywordList>
       <keyword>camera add focus null bee</keyword>
     </keywordList>
