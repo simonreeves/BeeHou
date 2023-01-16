@@ -6,7 +6,7 @@ I intended to keep this package open and free and welcome feedback and suggestio
 
 [twitter @simonreeves3d](https://twitter.com/simonreeves3d)
 
-[simonreeves.com](http://www.simonreeves.com)
+[simonreeves.com](https://simonreeves.com)
 
 ## Setup
 This repository is a [Houdini Package](https://www.sidefx.com/docs/houdini/ref/plugins.html) just like [qLib](https://github.com/qLab/qLib) or [SideFXLabs](https://github.com/sideeffects/SideFXLabs) and the installation is the same.
@@ -20,15 +20,24 @@ This repository is a [Houdini Package](https://www.sidefx.com/docs/houdini/ref/p
 
 
 
-# HDAs
+# Tools
 
 ### Place Highlight
 ![bee](docs/media/placehighlight.gif)
 Object level viewer state tool to interactivly position a light by placing its highlight on geo.
 My first attempt with python viewer state to replicate the #1 feature in 3dsmax 3.1
 
+### Camera Focus
+Adds a null to the selected camera(s) linked to the camera to control focus distance.
+
+https://user-images.githubusercontent.com/12150445/212693598-f8608ce1-980c-44b9-9956-587d49cb2418.mp4
+
+
 
 ### Align
+:warning: I think this is pretty much redundant since sidefx added [Match Size SOP](https://www.sidefx.com/docs/houdini/nodes/sop/matchsize.html)
+
+
 ![bee](docs/media/bee_align2.0.0.gif)
 Align one object by target object
 
@@ -40,7 +49,7 @@ Not sure I have ever used this but I thought it would be fun.
 Parented to a light, creates a [barn door](https://en.wikipedia.org/wiki/Stage_lighting_accessories#Barn_doors) object for a bit more control over light casting
 
 ### Camshake
-wip
+:warning: WIP
 
 ### Coloriser
 ![bee](docs/media/coloriser.png)
@@ -51,5 +60,8 @@ SOP to quickly set color using connectivity and a gradient
 Built for creating background railings easily from generated curves - SOP to create simple railings from a curve, has various options for number if horizontals/verticals, sweep shape etc.!
 
 ## Variant
+:warning: Probably just use [attribute from names](https://www.sidefx.com/docs/houdini/nodes/sop/attribfrompieces.html) :)
+
+
 ![bee](docs/media/variant.png)
 Very simple SOP for the common task of creating `variant` attributes on template points for `copy to points`
