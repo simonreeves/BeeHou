@@ -20,7 +20,13 @@ This repository is a [Houdini Package](https://www.sidefx.com/docs/houdini/ref/p
 
 
 
-# Tools
+# Tools & Features
+
+### $JOB display
+`$JOB` will display in the corner of the network view, a helpful reminder to see which environment you're in 
+
+![image](https://user-images.githubusercontent.com/12150445/212695160-627b480b-1491-49a2-b837-43fe61f06556.png)
+
 
 ### Place Highlight
 ![bee](docs/media/placehighlight.gif)
