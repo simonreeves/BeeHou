@@ -2,11 +2,14 @@ import hou
 
 
 def main():
+    """
+    Create a network box with a big label around the selected nodes, asks users for the label, picks a random colour
+    """
+
     # find parent node of current node.
     selected_nodes = hou.selectedNodes()
-    current_nodes = [x for x in selected_nodes if x.isCurrent]
 
-    if len(current_nodes) == 0:
+    if len(selected_nodes) == 0:
         message = "There are no selected nodes, please select some nodes first"
         hou.ui.setStatusMessage(message=message, severity=hou.severityType.ImportantMessage)
         return
@@ -14,9 +17,10 @@ def main():
     # Ask user for label, first looks tidier in network viewer
     label = hou.ui.readInput('Label')
 
-    parent = current_nodes[0].parent()
+    # get parent of first selected node
+    parent = selected_nodes[0].parent()
 
-    # create network boxes
+    # create network box
     child_network_box = parent.createNetworkBox()
 
     # find good position of boxes, which is center of selected nodes.
@@ -32,7 +36,14 @@ def main():
         child_network_box.fitAroundContents()
 
     # set color of network boxes
-    network_box_color = hou.Color(0.5, 0.1, 0.1)
+    # create a hou.Colour
+    network_box_color = hou.Color()
+    
+    # create random hue using x position (whynot)
+    hue = hou.hmath.rand(center_x) * 360
+
+    # set its HSV
+    network_box_color.setHSL((hue, 0.5, 0.4),)
     child_network_box.setColor(network_box_color)
 
     # create sticky_note
@@ -53,7 +64,6 @@ def main():
 
     # add after setting position
     child_network_box.addItem(sticky_note)
-    
     sticky_note.setDrawBackground(False)
 
     return
