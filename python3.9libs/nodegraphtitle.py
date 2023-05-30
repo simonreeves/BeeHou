@@ -20,8 +20,9 @@ def networkEditorTitleLeft(editor):
     except:
         title = ''
 
-    # Bee edit, append $JOB
-    # Add a newline if title is in use
+    # BeeHou edit, appending $JOB
+    
+    # Add a newline if title is not blank
     if title:
         title += '\n'
     
