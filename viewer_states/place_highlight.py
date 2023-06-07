@@ -51,8 +51,8 @@ class BeePlaceHighlightState(object):
         self.scene_viewer.endStateUndo()
                 
     def onSelection(self, kwargs):
-        """get the light from the selection"""
-        print(len(kwargs["selection"]))
+        """get the light object from the selection"""
+        
         if len(kwargs["selection"]) != 1:
             return False
         

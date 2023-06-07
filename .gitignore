@@ -143,3 +143,5 @@ blank-env.sh
 *.code-workspace
 
 .vscode/
+
+gallery/backup/

@@ -7,11 +7,14 @@
 
   <toolshelf name="Bee" label="Bee">
     <memberTool name="bee_placehighlight"/>
-    <memberTool name="tool_1"/>
     <memberTool name="bee_labelled_netbox"/>
+    <memberTool name="bee_object_merge_selection_obj"/>
+    <memberTool name="tool_1"/>
+    <memberTool name="List Materials"/>
+    <memberTool name="bee_focus_null"/>
   </toolshelf>
 
-  <tool name="bee_placehighlight" label="Place Highlight" icon="$BEE_HOU/icons/placehighlight.svg">
+  <tool name="bee_placehighlight" label="Place Highlight (Bee)" icon="$BEE_HOU/icons/placehighlight.svg">
     <toolSubmenu>Bee</toolSubmenu>
     <script scriptType="python"><![CDATA[import hou
 import stateutils
@@ -44,16 +47,19 @@ else:
     </keywordList>
   </tool>
 
-  <tool name="tool_1" label="Make Merged Object Bee" icon="PLASMA_App">
+  <tool name="tool_1" label="Object Merge Selection SOP Bee" icon="PLASMA_App">
     <toolMenuContext name="network">
-      <contextNetType>OBJ</contextNetType>
+      <contextNetType>SOP</contextNetType>
     </toolMenuContext>
     <toolSubmenu>Bee</toolSubmenu>
-    <script scriptType="python"><![CDATA[import bee.make_merged_object
-bee.make_merged_object.main()]]></script>
+    <script scriptType="python"><![CDATA[import bee.object_merge_selected
+bee.object_merge_selected.sibling_sop(kwargs)]]></script>
+    <keywordList>
+      <keyword>bee object merge sop</keyword>
+    </keywordList>
   </tool>
 
-  <tool name="bee_labelled_netbox" label="Labelled Network Box Bee" icon="PLASMA_App">
+  <tool name="bee_labelled_netbox" label="Labelled Network Box (Bee)" icon="PLASMA_App">
     <toolMenuContext name="network">
       <contextNetType>OBJ</contextNetType>
       <contextNetType>SOP</contextNetType>
@@ -69,10 +75,45 @@ bee.make_merged_object.main()]]></script>
     </toolMenuContext>
     <toolSubmenu>Bee</toolSubmenu>
     <script scriptType="python"><![CDATA[import bee.labelled_netbox
-reload(bee.labelled_netbox)
 bee.labelled_netbox.main()]]></script>
     <keywordList>
-      <keyword>bee network box label note sticky</keyword>
+      <keyword>bee network box label note sticky group frame backdrop</keyword>
+    </keywordList>
+  </tool>
+
+  <tool name="bee_object_merge_selection_obj" label="Object Merge Selection OBJ Bee" icon="PLASMA_App">
+    <toolMenuContext name="network">
+      <contextNetType>SOP</contextNetType>
+    </toolMenuContext>
+    <toolSubmenu>Bee</toolSubmenu>
+    <script scriptType="python"><![CDATA[import bee.object_merge_selected
+bee.object_merge_selected.sibling_obj(kwargs)]]></script>
+    <keywordList>
+      <keyword>bee object merge</keyword>
+    </keywordList>
+  </tool>
+
+  <tool name="List Materials" label="List Materials (Bee)" icon="Textport">
+    <toolMenuContext name="network">
+      <contextNetType>SOP</contextNetType>
+    </toolMenuContext>
+    <toolSubmenu>Bee</toolSubmenu>
+    <script scriptType="python"><![CDATA[import bee.list_materials
+bee.list_materials.main()]]></script>
+    <keywordList>
+      <keyword>python list materials</keyword>
+    </keywordList>
+  </tool>
+
+  <tool name="bee_focus_null" label="Camera Focus Null (Bee)" icon="$BEE_HOU/icons/align.svg">
+    <toolMenuContext name="network">
+      <contextNetType>OBJ</contextNetType>
+    </toolMenuContext>
+    <toolSubmenu>Bee</toolSubmenu>
+    <script scriptType="python"><![CDATA[import bee.focus_null
+bee.focus_null.main(kwargs)]]></script>
+    <keywordList>
+      <keyword>camera add focus null bee</keyword>
     </keywordList>
   </tool>
 </shelfDocument>

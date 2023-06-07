@@ -42,21 +42,11 @@
 -->
 	<menu>
 
-		<scriptItem id="bee_rs_tex_convert">
-			<label>Redshift Texture Convert (Bee)</label>
-			<modifyItem><insertAfter>revert_to_prev_val</insertAfter></modifyItem>
+		<scriptItem id="bee_add_loop_parms">
+			<label>Add Loop Parms (Bee)</label>
 			<scriptCode><![CDATA[
-import bee.rs_tex_convert
-bee.rs_tex_convert.main(kwargs)
-]]></scriptCode>
-		</scriptItem>
-
-		<scriptItem id="bee_use_env_var">
-			<label>Switch path to Environment variable (Bee)</label>
-			<modifyItem><insertAfter>revert_to_prev_val</insertAfter></modifyItem>
-			<scriptCode><![CDATA[
-import bee.parm_use_envvar
-bee.parm_use_envvar.main(kwargs)
+import bee.add_loop_parms
+bee.add_loop_parms.main(kwargs)
 ]]></scriptCode>
 		</scriptItem>
 

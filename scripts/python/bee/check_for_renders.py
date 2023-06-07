@@ -11,6 +11,8 @@ def main():
         'Redshift': 'RS_outputFileNamePrefix',
         'OpenGL': 'picture',
         'Mantra': 'vm_picture',
+        'OpenGL': 'picture',
+        'An_PreVis': 'picture'
     }
 
     # init list
@@ -43,12 +45,11 @@ def main():
             existing_renders.append(node.path())
 
     # if any were found
-    if existing_renders:
-        if hou.isUIAvailable():
-            message = 'Renders already exist for \"{}\" you should version up'.format(', '.join(existing_renders))
+    if hou.isUIAvailable():
+        if existing_renders:
+            message = 'Renders already exist for \"{}\" consider versioning up'.format(', '.join(existing_renders))
             hou.ui.setStatusMessage(message=message, severity=hou.severityType.ImportantMessage)
-    else:
-        if hou.isUIAvailable():
+        else:
             message = 'No renders found'
             hou.ui.setStatusMessage(message=message, severity=hou.severityType.Message)
 
