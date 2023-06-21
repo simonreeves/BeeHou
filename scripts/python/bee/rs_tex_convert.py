@@ -31,10 +31,10 @@ def main(kwargs):
     # print('rs_tex_processor_path: {}'.format(rs_tex_processor_path))
 
     if not os.path.exists(rs_tex_processor_path):
-        print('could not find rstex exe')
+        print('BeeHou: Could not find redshiftTextureProcessor.exe')
         return False
 
-    # start subprocess (locks houdini)
+    # build args
     args = [rs_tex_processor_path, texfiles_dir + '/*']
     
     # popen starts new process! call does not
