@@ -11,10 +11,8 @@ def add_loop_parms(node):
     adds useful parms to access iteration of foreach loop
     """
     
-    n = node
-
     # get existing list of parameters for the given node
-    parm_template = n.parmTemplateGroup()
+    parm_template = node.parmTemplateGroup()
 
     # check if loop tools already exists
     if parm_template.find('loop_tools'):
@@ -59,4 +57,4 @@ def add_loop_parms(node):
     parm_template.append(parmfolder)
 
     # apply changes
-    n.setParmTemplateGroup(parm_template)
+    node.setParmTemplateGroup(parm_template)
