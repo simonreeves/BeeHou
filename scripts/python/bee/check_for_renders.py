@@ -26,6 +26,7 @@ def main():
 
         # if ROP is not supported, skip it
         if not output_parm:
+            print(f"Found a ROP that is not supported for checking exisitng renders, maybe tell someone!\nROP: {node.path()}")
             continue
 
         # eval at frame to get predictable result
